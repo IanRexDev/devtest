@@ -2655,6 +2655,23 @@ class BstrTheme{
       }
 }
 
+/* Unsplash Ajax request */
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://api.unsplash.com/photos/random', true);
+xhr.setRequestHeader('Authorization', 'Client-ID HwHsjYFDfReRswM5zc2cHBlZlpK6cpBe95UGlWP0XNA');
+xhr.onreadystatechange = function() {
+  if (xhr.readyState === 4 && xhr.status === 200) {
+    var response = JSON.parse(xhr.responseText);
+    var imageUrl = response.urls.regular;
+    var imageSrcset = response.urls.full + ' ' + response.width + 'w';
+    var img = document.querySelector('.block--image img');
+    img.setAttribute('src', imageUrl);
+    img.setAttribute('data-srcset', imageSrcset);
+    img.setAttribute('srcset', imageSrcset);
+  }
+};
+xhr.send();
+
 const bstore = new BstrStore();
 const BoosterTheme = new BstrTheme()
 

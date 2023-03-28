@@ -123,7 +123,7 @@
 
     {{ '/services/javascripts/currencies.js' | script_tag }}
     {% comment %} If you want to serve the non-minified version, remove .min extension {% endcomment %}
-    {{ 'booster.min.js' | asset_url | script_tag }}
+    {{ 'booster.js' | asset_url | script_tag }}
     {{ 'unicons.css' | asset_url | stylesheet_tag }}
  
     {% unless settings.bodyHTML == blank %}

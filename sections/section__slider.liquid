@@ -64,7 +64,7 @@
 {% endunless %}
 </style>
 
-<div data-bstr-section-slider="{{section.id}}" {% if section.settings.autoplay %}data-bstr-autoplay=true{% endif %} onmouseover="this.dataset.paused = -1;" onmouseout="this.dataset.paused = new Date().getTime();" 
+<div data-bstr-section-slider="{{section.id}}" {% if section.settings.autoplay %}data-bstr-autoplay=true{% endif %} onmouseover="this.dataset.paused = -1;" onmouseout="this.dataset.paused = new Date().getTime();"
 id="s--{{section.id}}" class="{% render 'common-class', section: section, class: 'slider', vAlign: false %}">
 {% if section.blocks.size > 1 %}
 <button data-bstr-slider-button="-" class="slider__button hide-mobile"><i class="uil uil-angle-left-b"></i></button>

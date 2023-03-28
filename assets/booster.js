@@ -2672,6 +2672,20 @@ xhr.onreadystatechange = function() {
 };
 xhr.send();
 
+/* Test Autoplay */
+document.addEventListener("DOMContentLoaded", function() {
+    // get the button element
+    var button = document.querySelector('button[data-bstr-slider-button="+"]');
+
+    // check if autoplay is set to true
+    if (document.querySelector('[data-bstr-autoplay="true"]')) {
+    // set an interval to trigger the button every 5 seconds
+    var interval = setInterval(function() {
+        button.click();
+    }, 5000);
+    }
+  });
+
 const bstore = new BstrStore();
 const BoosterTheme = new BstrTheme()
 

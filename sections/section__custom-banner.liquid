@@ -1,0 +1,51 @@
+{{ 'custom.css' | asset_url | stylesheet_tag }}
+
+<section id="custom_banner" style="background-image:url('{{section.settings.image | img_url: 'master'}}')">
+    <div class="custom_banner--contents">
+        <h1 class="custom_banner--heading">{{ section.settings.heading }}</h1>
+        <p class="cutom_banner--subheading">{{ section.settings.subheading }}</p>
+        <a href="{{ section.settings.buttonLink }}" class="custom_banner--button">{{ section.settings.buttonText }}</a>
+    </div>
+</section>
+
+{% schema %}
+    {
+        "name": "Custom Banner",
+        "class": "custom_banner",
+        "settings": [
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default": "Lorem Ipsum"
+            },
+            {
+                "type": "text",
+                "id": "subheading",
+                "label": "Subheading",
+                "default": "Lorem ipsum dolor, sit amet consectetur adipisicing elit."
+            },
+            {
+                "type": "text",
+                "id": "buttonText",
+                "label": "Button Text",
+                "default": "Shop Now"
+            },
+            {
+                "type": "url",
+                "id": "buttonLink",
+                "label": "Button Link"
+            },
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Backgroun Image"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Custom Banner"
+            }
+        ]
+    }
+{% endschema %}

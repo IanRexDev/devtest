@@ -1,0 +1,29 @@
+#custom_banner {
+    height: 80vh;
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#custom_banner .custom_banner--heading,
+#custom_banner .custom_banner--subheading {
+    color: #fff !important;
+}
+
+#custom_banner .custom_banner--contents {
+    width: 100%;
+    margin-left: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+#custom_banner .custom_banner--button {
+    background-color: orange;
+    color: #fff;
+    padding: 1rem;
+    text-decoration: none;
+}
